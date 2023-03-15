@@ -14,9 +14,9 @@ void ajouterElement(struct Perso** list, char name[20],int lvl){
     if(tmp == NULL){exit(0);}
     strcpy(tmp->name,name);
     tmp->lvl = lvl;
-
+    tmp->next = NULL;
     if(*list == NULL){
-        tmp->next = NULL;
+        
         tmp->previous =NULL;
     }
     else{
