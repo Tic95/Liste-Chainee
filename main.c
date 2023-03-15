@@ -26,13 +26,14 @@ void ajouterElement(struct Perso** list, char name[20],int lvl){
     *list = tmp;
 }
 void SuppElement(struct Perso *List, char name[20]){
-    while(List->previous != NULL){
-        List = List->previous;
+    while(List != NULL){
+        
         if(strcmp(List->name, name) == 0){
             (List->next)->previous = List->previous;
             (List->previous)->next = List->next;
             
         }
+        List = List->previous;
     }
 }
 void afficherList(struct Perso* i){
